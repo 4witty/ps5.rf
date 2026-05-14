@@ -19,33 +19,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
     window.addEventListener('scroll', function() {
         if (window.scrollY > 50) {
-            header.style.boxShadow = '0 5px 20px rgba(0,0,0,0.1)';
+            header.style.boxShadow = '0 5px 20px rgba(0, 217, 255, 0.2)';
         } else {
             header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
         }
     });
 
-    const audio = document.getElementById('bg-music');
-    const musicBtn = document.getElementById('music-toggle');
-    let isPlaying = false;
-
-    if (musicBtn && audio) {
-        musicBtn.addEventListener('click', function() {
-            if (isPlaying) {
-                audio.pause();
-                musicBtn.textContent = 'включить музыку';
-                musicBtn.classList.remove('active');
-            } else {
-                audio.play();
-                musicBtn.textContent = 'выключить музыку';
-                musicBtn.classList.add('active');
-            }
-            isPlaying = !isPlaying;
-        });
-    }
-
     const observerOptions = {
-        threshold: 0.1
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
     };
 
     const observer = new IntersectionObserver(function(entries) {
@@ -64,5 +46,24 @@ document.addEventListener('DOMContentLoaded', function() {
         el.style.transform = 'translateY(20px)';
         el.style.transition = `all 0.5s ease ${index * 0.1}s`;
         observer.observe(el);
+    });
+
+    // Click outside to close mobile menu
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.nav') && navMenu && navMenu.classList.contains('active')) {
+            navMenu.classList.remove('active');
+            burger.classList.remove('active');
+        }
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
     });
 });
