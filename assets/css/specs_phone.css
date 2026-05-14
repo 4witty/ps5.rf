@@ -1,0 +1,83 @@
+@media (max-width: 768px) {
+body {
+font-size: 14px;
+}
+.header {
+position: fixed;
+}
+.nav {
+padding: 0.8rem 0;
+}
+.logo {
+font-size: 1.5rem;
+}
+.nav-menu {
+position: fixed;
+left: -100%;
+top: 60px;
+flex-direction: column;
+background: #fff;
+width: 100%;
+text-align: center;
+transition: 0.3s;
+padding: 2rem 0;
+box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+.nav-menu.active {
+left: 0;
+}
+.burger {
+display: flex;
+}
+.hero {
+padding-top: 60px;
+min-height: 90vh;
+}
+.hero h1 {
+font-size: 2rem;
+margin-bottom: 1rem;
+}
+.hero-subtitle {
+font-size: 1.2rem;
+}
+.hero-text {
+font-size: 1rem;
+padding: 0 1rem;
+}
+.hero-links {
+flex-direction: column;
+align-items: center;
+gap: 1rem;
+}
+.btn {
+width: 80%;
+max-width: 300px;
+padding: 0.9rem 2rem;
+font-size: 1rem;
+}
+.section-title {
+font-size: 1.8rem;
+margin: 2rem 0;
+}
+.preview {
+padding: 3rem 0;
+}
+.preview-grid {
+grid-template-columns: 1fr;
+gap: 1.5rem;
+}
+.preview-card {
+padding: 2rem;
+}
+.page-header {
+padding: 120px 0 60px;
+margin-top: 60px;
+}
+.page-header h1 {
+font-size: 1.8rem;
+}
+.footer {
+padding: 2rem 0;
+margin-top: 3rem;
+}
+}

@@ -1,0 +1,148 @@
+.consoles-section {
+padding: 5rem 0;
+background: #fff;
+}
+
+.console-compare {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 2.5rem;
+align-items: start;
+}
+
+.console-card {
+background: #f8f9fa;
+border-radius: 15px;
+padding: 2.5rem;
+position: relative;
+border: 2px solid #e9ecef;
+transition: all 0.3s;
+}
+
+.console-card:hover {
+transform: translateY(-5px);
+border-color: #0070d1;
+box-shadow: 0 10px 30px rgba(0,112,209,0.15);
+}
+
+.console-card.featured {
+border-color: #0070d1;
+transform: scale(1.05);
+}
+
+.console-card.featured:hover {
+transform: scale(1.05) translateY(-5px);
+}
+
+.console-card.pro {
+border-color: #0070d1;
+background: linear-gradient(145deg, #f8f9fa, #e3f2fd);
+}
+
+.console-badge {
+position: absolute;
+top: 15px;
+right: 15px;
+background: #0070d1;
+color: #fff;
+padding: 0.4rem 1rem;
+border-radius: 20px;
+font-size: 0.85rem;font-weight: bold;
+}
+
+.console-badge.popular {
+background: #28a745;
+}
+
+.console-badge.premium {
+background: #ffc107;
+color: #1a1a1a;
+}
+
+.console-card h2 {
+font-size: 1.8rem;
+margin-bottom: 2rem;
+color: #1a1a1a;
+}
+
+.console-specs {
+list-style: none;
+margin: 2rem 0;
+}
+
+.console-specs li {
+display: flex;
+justify-content: space-between;
+padding: 1rem 0;
+border-bottom: 1px solid #dee2e6;
+}
+
+.console-specs li:last-child {
+border-bottom: none;
+}
+
+.spec-name {
+color: #666;
+font-weight: 600;
+}
+
+.spec-value {
+color: #1a1a1a;
+font-weight: 700;
+text-align: right;
+}
+
+.console-desc {
+text-align: center;
+color: #666;
+line-height: 1.7;
+padding: 1.5rem;background: #fff;
+border-radius: 10px;
+}
+
+.controllers-section {
+padding: 5rem 0;
+background: #f8f9fa;
+}
+
+.controllers-grid {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 3rem;
+}
+
+.controller-card {
+background: #fff;
+padding: 3rem;
+border-radius: 15px;
+text-align: center;
+border: 2px solid #e9ecef;
+}
+
+.controller-img {
+max-width: 100%;
+height: 250px;
+object-fit: contain;
+margin-bottom: 1.5rem;
+}
+
+.controller-card h3 {
+color: #0070d1;
+font-size: 1.5rem;
+margin-bottom: 1rem;
+}
+
+@media (max-width: 968px) {
+.console-card.featured {
+transform: scale(1);
+}
+}
+
+@media (max-width: 768px) {
+.console-compare {
+grid-template-columns: 1fr;
+}
+.controllers-grid {
+grid-template-columns: 1fr;
+}
+}
